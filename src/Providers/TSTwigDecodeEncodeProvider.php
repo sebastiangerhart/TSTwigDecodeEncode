@@ -14,8 +14,8 @@ use Plenty\Plugin\ConfigRepository;
  */
 class TSTwigDecodeEncodeProvider extends ServiceProvider
 {
-    public function register(){
-        $this->getApplication()->singleton( CeresConfig::class );
+    public function register()
+	{
     }
     
     public function boot(Twig $twig, Dispatcher $eventDispatcher, ConfigRepository $config)
