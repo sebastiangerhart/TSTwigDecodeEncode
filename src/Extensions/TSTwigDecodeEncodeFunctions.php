@@ -1,5 +1,5 @@
 <?php
-namespace TSDecodeEncode\Extensions;
+namespace TSTwigDecodeEncode\Extensions;
 
 use Plenty\Plugin\Templates\Extensions\Twig_Extension;
 use Plenty\Plugin\Templates\Factories\TwigFactory;
@@ -7,7 +7,7 @@ use Plenty\Plugin\Templates\Factories\TwigFactory;
 /**
  * Created by sg, 04.04.18 17:01
  * Class TSTwigDecodeEncodeFunctions
- * @package TSDecodeEncode\Extensions
+ * @package TSTwigDecodeEncode\Extensions
  */
 class TSTwigDecodeEncodeFunctions extends Twig_Extension
 {
@@ -33,7 +33,7 @@ class TSTwigDecodeEncodeFunctions extends Twig_Extension
      */
     public function getName(): string
     {
-        return "TSDecodeEncode_Extension_TSTwigDecodeEncodeFunctions";
+        return "TSTwigDecodeEncode_Extension_TSTwigDecodeEncodeFunctions";
     }
 
     /**
