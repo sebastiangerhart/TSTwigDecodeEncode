@@ -22,7 +22,6 @@ class TSTwigDecodeEncodeFunctions extends Twig_Extension
      */
     public function __construct(TwigFactory $twig)
     {
-
         $this->twig = $twig;
     }
 
@@ -44,17 +43,17 @@ class TSTwigDecodeEncodeFunctions extends Twig_Extension
     public function getFunctions(): array
     {
         return [
-            $this->twig->createSimpleFunction('base64_decode', [$this, 'base64_decode']),
-			$this->twig->createSimpleFunction('base64_encode', [$this, 'base64_encode']),
-			$this->twig->createSimpleFunction('urldecode', [$this, 'urldecode']),
-			$this->twig->createSimpleFunction('urlencode', [$this, 'urlencode'])
+            $this->twig->createSimpleFunction('base64_decode', [$this, 'ts_base64_decode'], ['is_safe' => array('html')]),
+			$this->twig->createSimpleFunction('base64_encode', [$this, 'ts_base64_encode'], ['is_safe' => array('html')]),
+			$this->twig->createSimpleFunction('urldecode', [$this, 'ts_urldecode'], ['is_safe' => array('html')]),
+			$this->twig->createSimpleFunction('urlencode', [$this, 'ts_urlencode'], ['is_safe' => array('html')])
         ];
     }
 
     /**
      * @return string
      */
-    public function base64_decode($str)
+    public function ts_base64_decode($str)
 	{
         return base64_decode($str);
     }
@@ -62,7 +61,7 @@ class TSTwigDecodeEncodeFunctions extends Twig_Extension
     /**
      * @return string
      */
-    public function base64_encode($str)
+    public function ts_base64_encode($str)
 	{
         return base64_encode($str);
     }
@@ -70,7 +69,7 @@ class TSTwigDecodeEncodeFunctions extends Twig_Extension
     /**
      * @return string
      */
-    public function urldecode($str)
+    public function ts_urldecode($str)
 	{
         return urldecode($str);
     }
@@ -78,7 +77,7 @@ class TSTwigDecodeEncodeFunctions extends Twig_Extension
     /**
      * @return string
      */
-    public function urlencode($str)
+    public function ts_urlencode($str)
 	{
         return urlencode($str);
     }
